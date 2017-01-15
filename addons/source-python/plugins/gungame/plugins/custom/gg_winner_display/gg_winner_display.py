@@ -58,10 +58,9 @@ def gg_team_win(game_event):
 def _send_motd(**kwargs):
     """Send the winner display page."""
     message_manager.motd_message(
-        panel_type=2,
         title='GunGame Winner',
         message='{url}?{query}'.format(
             url=winner_page.get_string(),
-            query=urlencode(**kwargs)
+            query=urlencode(kwargs)
         )
     )

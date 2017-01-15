@@ -25,6 +25,6 @@ __all__ = (
 with GunGameConfigManager(info.name) as _config:
     with _config.cvar(
         name='winner_page',
-        default='http://gungame5.com/gg5_win.php',
+        default='http://gungame.net/gg5_win.php',
     ) as winner_page:
         winner_page.add_text()
