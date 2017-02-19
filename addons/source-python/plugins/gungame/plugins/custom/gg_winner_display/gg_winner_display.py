@@ -28,7 +28,10 @@ from .configuration import winner_page
 def gg_win(game_event):
     """Send the winner display for the individual winner."""
     winner = player_dictionary[game_event['winner']]
-    loser = player_dictionary[game_event['loser']]
+    try:
+        loser = player_dictionary[game_event['loser']].name
+    except ValueError:
+        loser = ''
     places = len(winners_database)
 
     Delay(
@@ -36,7 +39,7 @@ def gg_win(game_event):
         _send_motd,
         kwargs={
             'winnerName': winner.name,
-            'loserName': loser.name,
+            'loserName': loser,
             'wins': winner.wins,
             'place': winner.rank,
             'totalPlaces': places,
