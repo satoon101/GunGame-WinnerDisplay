@@ -62,8 +62,5 @@ def _send_motd(**kwargs):
     """Send the winner display page."""
     message_manager.motd_message(
         title='GunGame Winner',
-        message='{url}?{query}'.format(
-            url=winner_page.get_string(),
-            query=urlencode(kwargs)
-        )
+        message=f'{winner_page.get_string()}?{urlencode(kwargs)}',
     )
