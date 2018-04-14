@@ -13,7 +13,7 @@ from events import Event
 from listeners.tick import Delay
 
 # GunGame
-from gungame.core.messages import message_manager
+from gungame.core.messages.manager import message_manager
 from gungame.core.players.database import winners_database
 from gungame.core.players.dictionary import player_dictionary
 
